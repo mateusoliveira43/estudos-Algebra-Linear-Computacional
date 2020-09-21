@@ -1,8 +1,12 @@
-# Comandos NumPy
+# Tarefas
 
 - [ ] implementar substituição progressiva (foward-substitution) e substituição regressiva (backward-substitution) para resolver sistemas lineares triangulares.
 
 - [ ] implementar fatoração LU.
+
+- [ ] migrar para [Julia]?
+
+# Comandos NumPy
 
 Comandos úteis da biblioteca [NumPy] para a disciplina.
 
@@ -73,3 +77,4 @@ np.linalg.cond(A)
 retorna o número de condição da matriz `A`. Nesse caso, o padrão é norma 2. Para usar outro como `1`, `'inf'` ou `'fro'`, basta passar como segundo parâmetro.
 
 [NumPy]: https://numpy.org/
+[Julia]: https://julialang.org/

@@ -1,5 +1,9 @@
 # Comandos NumPy
 
+- [ ] implementar substituição progressiva (foward-substitution) e substituição regressiva (backward-substitution) para resolver sistemas lineares triangulares.
+
+- [ ] implementar fatoração LU.
+
 Comandos úteis da biblioteca [NumPy] para a disciplina.
 
 Para todos os comandos deste resumo, considere:

@@ -1,6 +1,8 @@
 # Tarefas
 
-- [ ] implementar substituição progressiva (foward-substitution) e substituição regressiva (backward-substitution) para resolver sistemas lineares triangulares.
+- [X] implementar substituição progressiva (foward-substitution) para resolver sistemas lineares triangulares inferiores.
+
+- [ ] implementar substituição regressiva (backward-substitution) para resolver sistemas lineares triangulares superiores.
 
 - [ ] implementar fatoração LU.
 

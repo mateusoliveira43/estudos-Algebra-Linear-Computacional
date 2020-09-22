@@ -1,2 +1,6 @@
 println("Hello World!")
 println("What can I do with you?")
+A = zeros(3,3)
+B = zeros((3))
+println(A)
+println(B)

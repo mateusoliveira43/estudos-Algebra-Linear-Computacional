@@ -1,5 +1,6 @@
 import numpy as np
 from pprint import pprint
+import timeit
 
 
 def lu_factorization(matrix):
@@ -7,15 +8,13 @@ def lu_factorization(matrix):
     dimensions = matrix.shape
     n = dimensions[0]
     lower_matrix = np.eye(n)
-    upper_matrix = matrix
 
     for i in range(n-1):
         for k in range(i+1, n):
-            lower_matrix[k][i] = upper_matrix[k][i]/upper_matrix[i][i]
+            lower_matrix[k][i] = matrix[k][i]/matrix[i][i]
             for j in range(i+1, n):
-                upper_matrix[k][j] = upper_matrix[k][j] - \
-                    lower_matrix[k][i]*upper_matrix[i][j]
-    upper_matrix = np.triu(upper_matrix)
+                matrix[k][j] = matrix[k][j] - lower_matrix[k][i]*matrix[i][j]
+    upper_matrix = np.triu(matrix)
 
     result = []
     result.append(lower_matrix)
@@ -24,13 +23,16 @@ def lu_factorization(matrix):
 
 
 def exibe_testes(matrix, name_matrix):
+    start = timeit.default_timer()
     lu_factorization_matrix = lu_factorization(matrix)
+    stop = timeit.default_timer()
     print(f'matriz {name_matrix}:')
     pprint(matrix)
-    print(f'matriz inferior da fatoração LU de {name_matrix}:')
+    print(f'matriz triangular inferior da fatoração LU de {name_matrix}:')
     pprint(lu_factorization_matrix[0])
-    print(f'matriz superior da fatoração LU de {name_matrix}:')
+    print(f'matriz triangular superior da fatoração LU de {name_matrix}:')
     pprint(lu_factorization_matrix[1])
+    print(f'tempo decorrido: {stop-start}')
     print()
 
 

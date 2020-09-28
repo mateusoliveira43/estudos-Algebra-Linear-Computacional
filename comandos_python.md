@@ -79,5 +79,16 @@ np.tril(matrix)
 ```
 retorna as matrizes triangulares superior e inferior da matriz `matrix`, respectivamente.
 
+```python
+import timeit
+
+start = timeit.default_timer()
+# programa
+stop = timeit.default_timer()
+
+print('Time: ', stop - start) 
+```
+retorna o tempo decorrido para execução do programa
+
 [Python]: https://www.python.org/
 [NumPy]: https://numpy.org/

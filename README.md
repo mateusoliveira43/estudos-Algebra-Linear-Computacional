@@ -8,7 +8,6 @@ Resumo de comandos nas linguagens [Python] (voltada à biblioteca [Numpy]) e [Ju
 # Tarefas
 
 - [ ] Fazer comandos de [Julia].
-- [ ] comando tic; ... toc; (marcar tempo de execução).
 - [ ] olhar netlib/lapack e NAG
 
 # Trabalhos
@@ -17,7 +16,7 @@ Resumo de comandos nas linguagens [Python] (voltada à biblioteca [Numpy]) e [Ju
 
 - [ ] implementar substituição regressiva (backward-substitution) para resolver sistemas lineares triangulares superiores.
 
-- [ ] implementar fatoração LU.
+- [X] implementar fatoração LU.
 
 - [ ] calcular custo de seno/cossseno comparado ao custo de soma.
 

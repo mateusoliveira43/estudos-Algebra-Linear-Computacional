@@ -68,5 +68,16 @@ np.linalg.cond(A)
 ```
 retorna o número de condição da matriz `A`. Nesse caso, o padrão é norma 2. Para usar outro como `1`, `'inf'` ou `'fro'`, basta passar como segundo parâmetro.
 
+```python
+range(start,end, step)
+```
+para loops de `for` que comecem em `start` (padrão: 0) e acabem em `end` com passo `step` (padrão: 1).
+
+```python
+np.triu(matrix)
+np.tril(matrix)
+```
+retorna as matrizes triangulares superior e inferior da matriz `matrix`, respectivamente.
+
 [Python]: https://www.python.org/
 [NumPy]: https://numpy.org/

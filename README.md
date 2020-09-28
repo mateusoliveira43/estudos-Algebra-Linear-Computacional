@@ -9,6 +9,7 @@ Resumo de comandos nas linguagens [Python] (voltada à biblioteca [Numpy]) e [Ju
 
 - [ ] Fazer comandos de [Julia].
 - [ ] comando tic; ... toc; (marcar tempo de execução).
+- [ ] olhar netlib/lapack e NAG
 
 # Trabalhos
 

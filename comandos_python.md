@@ -7,6 +7,8 @@ Para todos os comandos deste resumo, considere:
 import numpy as np
 ```
 
+
+
 ## Criar Objetos
 
 ```python
@@ -39,6 +41,8 @@ interval = np.linspace(a, b, n)
 ```
 cria uma intervalo de `a` até `b` (incluindo os extremos) com `n` pontos.
 
+
+
 ## Operações
 
 ```python
@@ -50,6 +54,8 @@ transposta da matriz `A`.
 A.dot(B)
 ```
 Produto matricial da matriz `A` pela matriz `B`.
+
+
 
 ## Funções
 
@@ -69,7 +75,7 @@ np.linalg.cond(A)
 retorna o número de condição da matriz `A`. Nesse caso, o padrão é norma 2. Para usar outro como `1`, `'inf'` ou `'fro'`, basta passar como segundo parâmetro.
 
 ```python
-range(start,end, step)
+range(start, end, step)
 ```
 para loops de `for` que comecem em `start` (padrão: 0) e acabem em `end` com passo `step` (padrão: 1).
 
@@ -82,13 +88,15 @@ retorna as matrizes triangulares superior e inferior da matriz `matrix`, respect
 ```python
 import timeit
 
-start = timeit.default_timer()
-# programa
-stop = timeit.default_timer()
+inicio = timeit.default_timer()
+# código
+fim = timeit.default_timer()
 
-print('Time: ', stop - start) 
+print('Tempo: ', fim - inicio) 
 ```
-retorna o tempo decorrido para execução do programa
+retorna o tempo decorrido para execução do código.
+
+
 
 [Python]: https://www.python.org/
 [NumPy]: https://numpy.org/

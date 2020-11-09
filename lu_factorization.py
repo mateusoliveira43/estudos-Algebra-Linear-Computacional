@@ -23,16 +23,16 @@ def lu_factorization(matrix):
 
 
 def exibe_testes(matrix, name_matrix):
-    start = timeit.default_timer()
+    inicio = timeit.default_timer()
     lu_factorization_matrix = lu_factorization(matrix)
-    stop = timeit.default_timer()
+    fim = timeit.default_timer()
     print(f'matriz {name_matrix}:')
     pprint(matrix)
     print(f'matriz triangular inferior da fatoração LU de {name_matrix}:')
     pprint(lu_factorization_matrix[0])
     print(f'matriz triangular superior da fatoração LU de {name_matrix}:')
     pprint(lu_factorization_matrix[1])
-    print(f'tempo decorrido: {stop-start}')
+    print(f'tempo decorrido: {fim-inicio}')
     print()
 
 

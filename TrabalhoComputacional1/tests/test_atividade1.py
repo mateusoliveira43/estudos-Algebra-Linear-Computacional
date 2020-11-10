@@ -19,8 +19,14 @@ from atividade1 import cholesky_gaussian_elimination, cholesky_equality
 
 A = np.array([[1, -2, 1, 1], [-2, 8, -4, -6], [1, -4, 6, 5], [1, -6, 5, 7]])
 lista_teste = [A]
-for i in range(5):
-    lista_teste.append(np.eye(1000))
+ordem = 1000
+Diagonal = np.random.rand(ordem)*10
+Diagonal = np.diagflat(Diagonal)
+Triangular = np.random.randn(ordem, ordem)
+Triangular = np.tril(Triangular)
+Triangular[np.diag_indices_from(Triangular)] = 1
+Aleatoria = Triangular.dot(Diagonal.dot(Triangular.transpose()))
+lista_teste.append(np.eye(ordem))
 # Testes com a eliminação Gaussiana
 
 

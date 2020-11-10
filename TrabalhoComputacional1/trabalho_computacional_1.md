@@ -80,7 +80,7 @@ deactivate
 
 - Para validar seu algoritmo, crie matrizes simétricas definidas positivas fazendo A = LDL^T, com L uma matriz triangular inferior com 1's na diagonal (aleatória) e D uma matriz diagonal com os elementos da diagonal todos positivos. Compare o tempo das duas estratégias para calcular a fatoração Choleski em matrizes de ordem 1000, pelo menos. Interprete o resultado.
 
-    * Para os testes, utilizei a matriz de exemplo da apostila (ordem 4) e criei 5 matrizes aletórias de ordem 1000 (demoraram um tempo significativo). Os resultados foram melhores para o algoritmo usando a igualdade. Acho que era o esperado, visto que o trabalho desse algoritmo foi calcular a matriz G. Já no outro, são calculadas as matrizes L e U.
+    * Para os testes, utilizei a matriz de exemplo da apostila (ordem 4) e criei uma matriz aletória de ordem 1000 (demorarou um tempo significativo para execução). Os resultados foram melhores para o algoritmo usando a igualdade (cerca de 4 vezes mais rápido). Acho que era o esperado, visto que o trabalho desse algoritmo foi calcular a matriz G. Já no outro, são calculadas as matrizes L e U.
 
 
 
@@ -91,23 +91,35 @@ Considere o Problema de valor de contorno (PVC):
 
 y''(t) = f(t), s.a. y(0) = y(1) = 0
 
-em que f:[0, 1] → R é C^4[0, 1]. Escreva o problema acima discretizado, usando o método de diferença finitas. Use o espaçamento do intervalo [0, 1] igual a h > 0 (conforme encontra-se na apostila). Ache os autovalores e autovetores da matriz resultante da discretizaçẽo e verifique que esta matriz é simétrica definida positiva. Use o método que teve melhor desempenho na Questão 1 para resolver o sistema linear para as três funções f abaixo (despreze os termos y^(iv) e encontre a solução aproximada) e compare a qualidade da solução com a solução exata (graficamente e analiticamente pelo erro relativo). Faça os testes para valores de h = 0.1, h=0.01 e h=0.001. Calcule o número de condição da matriz para cada valor de h usado.
+em que f:[0, 1] → R é C^4[0, 1]. 
 
-Para obter as soluções exatas, utilizei [Wolfram|Alpha].
+- Escreva o problema acima discretizado, usando o método de diferença finitas. Use o espaçamento do intervalo [0, 1] igual a h > 0 (conforme encontra-se na apostila). 
 
-1. f(t) = t^2e^t
+    * Conforme visto, temos y(t_{i-1}) - 2y(t_i) + y(t_{i+1}) ~= h^2f(t_i). Podemos reescrever esse problema como Ay ~= b, com A sendo uma matriz de banda (-1, 2, -1), y = (y(t_1), y(t_2), ..., y(t_n))^T e b = -h^2(f(t_1), f(t_2), ..., f(t_n))^T.
 
-    solução exata: y(t) = e^t(t^2 - 4t + 6) 6(t - 1) -3et
+- Ache os autovalores e autovetores da matriz resultante da discretizaçẽo e verifique que esta matriz é simétrica definida positiva. 
 
-2. f(t) = 2[sen(πt)/t^3 − πcos(πt)/t^2] − π^2sen(πt)/t
+    * Pode ser mostrar pela definição que A é definida positiva: seja x pertencente ao R^n, x diferente do vetor nulo, temos x^TAx = 2x_1^2 - 2x_1x_2 + 2x_2^2 + ... -2x_{n-1}x_n + 2x_n^2 = x_1^2 + (x_1 - x_2)^2 + (x_2 - x_3)^2 + ... + (x_{n-1} - x_n)^2 + x_n^2 > 0.
 
+- Use o método que teve melhor desempenho na Questão 1 para resolver o sistema linear para as três funções f abaixo e compare a qualidade da solução com a solução exata (graficamente e analiticamente pelo erro relativo). Faça os testes para valores de h = 0.1, h=0.01 e h=0.001. 
 
-    solução exata: y(t) = π(t - 1) + sen(πt)/t
+    * Para obter as soluções exatas, utilizei [Wolfram|Alpha].
 
-3. f(t) = 3t^3 − 10t^2 + 1
+        1. f(t) = t^2e^t
 
+            solução exata: y(t) = e^t(t^2 - 4t + 6) + 6(t - 1) - 3et
 
-    solução exata: y(t) = t/60(9t^4 - 50t^3 + 30t + 11)
+        2. f(t) = 2[sen(πt)/t^3 − πcos(πt)/t^2] − π^2sen(πt)/t
+
+            solução exata: y(t) = π(t - 1) + sen(πt)/t
+
+        3. f(t) = 3t^3 − 10t^2 + 1
+
+            solução exata: y(t) = t/60(9t^4 - 50t^3 + 30t + 11)
+
+- Calcule o número de condição da matriz para cada valor de h usado.
+
+    * Para h = 0.1, temos a ordem da matriz sendo 11, já para h=0.01 e h=0.001, temos a ordem igual a 101 e 1001, respectivamente. A medida que a ordem aumenta, o número de condição também aumenta, deixando o problema instável.
 
 [Wolfram|Alpha]: https://www.wolframalpha.com/
 [Python 3]: https://www.python.org/downloads/

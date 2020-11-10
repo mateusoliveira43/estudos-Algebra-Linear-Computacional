@@ -27,12 +27,12 @@ A = np.eye(n)
 cria a matriz identidade de ordem `n`.
 
 ```python
-A = np.ramdom.rand((m, n))
+A = np.random.rand((m, n))
 ```
 cria uma matriz de entradas aleatórias (no intervalo [0,1)) de ordem `m` (linhas) por `n` (colunas).
 
 ```python
-A = np.ramdom.randn((m, n))
+A = np.random.randn((m, n))
 ```
 cria uma matriz de entradas aleatórias (baseada na distribuição normal) de ordem `m` (linhas) por `n` (colunas).
 

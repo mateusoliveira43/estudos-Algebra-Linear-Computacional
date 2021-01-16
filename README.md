@@ -10,6 +10,12 @@ Dúvidas e sugestões de melhoria são bem-vindas! Entre em contato ou abra uma 
 
 
 
+# Links
+
+- https://sparse.tamu.edu/
+
+
+
 # Tarefas
 
 - [ ] Fazer comandos e trablhos também em [Julia].
@@ -32,6 +38,7 @@ Dúvidas e sugestões de melhoria são bem-vindas! Entre em contato ou abra uma 
 - [X] implementar fatoração Cholesky.
 - [X] trabalho computacional 1.
 - [ ] implementar fatoração QR.
+- [ ] implementar método do gradiente conjugado. 
 
 
 
